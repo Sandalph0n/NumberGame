@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOV Welcoming Event 2025 - Number Game Support</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MOV Welcoming Event 2025</h1>
+            <p>Macquarie University | Number Game Support</p>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="feature1">Tính Toán Tối Ưu</button>
+            <button class="tab-btn" data-tab="feature2">Cân Bằng Đội Chơi</button>
+        </nav>
+
+        <!-- Tính năng 1: Tính toán tối ưu -->
+        <div id="feature1" class="tab-content active">
+            <div class="card">
+                <h2>Tính Toán Tối Ưu</h2>
+                <p>Từ số lượng thành viên N và target K, tính ra số cách xếp tối ưu nhất</p>
+                
+                <div class="input-group">
+                    <label for="n1">Số lượng thành viên (N):</label>
+                    <input type="number" id="n1" min="1" max="20" value="5" placeholder="Nhập số lượng thành viên">
+                </div>
+                
+                <div class="input-group">
+                    <label for="k1">Target (K):</label>
+                    <input type="number" id="k1" min="1" value="5" placeholder="Nhập target">
+                </div>
+                
+                <button class="btn-calculate" onclick="calculateOptimal()">Tính Toán</button>
+                
+                <div id="result1" class="result-section" style="display: none;">
+                    <h3>Kết Quả:</h3>
+                    <div class="result-info">
+                        <p><strong>Số nhóm tối đa:</strong> <span id="maxGroups"></span></p>
+                        <p><strong>Target:</strong> <span id="targetValue"></span></p>
+                    </div>
+                    <div class="groups-display">
+                        <h4>Chi tiết các nhóm:</h4>
+                        <div id="groupsList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tính năng 2: Cân bằng đội chơi -->
+        <div id="feature2" class="tab-content">
+            <div class="card">
+                <h2>Cân Bằng Đội Chơi</h2>
+                <p>Tìm target K cho từng đội để có số nhóm tối ưu bằng nhau</p>
+                
+                <div class="team-inputs">
+                    <div class="team-section">
+                        <h3>Đội 1</h3>
+                        <div class="input-group">
+                            <label for="team1Size">Số lượng thành viên:</label>
+                            <input type="number" id="team1Size" min="1" max="20" value="6" placeholder="Nhập số lượng">
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h3>Đội 2</h3>
+                        <div class="input-group">
+                            <label for="team2Size">Số lượng thành viên:</label>
+                            <input type="number" id="team2Size" min="1" max="20" value="7" placeholder="Nhập số lượng">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="desiredGroups">Số nhóm tối ưu mong muốn:</label>
+                    <input type="number" id="desiredGroups" min="1" value="2" placeholder="Nhập số nhóm mong muốn">
+                </div>
+                
+                <button class="btn-calculate" onclick="calculateBalance()">Tìm Target Cân Bằng</button>
+                
+                <div id="result2" class="result-section" style="display: none;">
+                    <h3>Kết Quả Cân Bằng:</h3>
+                    <div id="balanceResults"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 MOV - Macquarie University Welcoming Event</p>
+    </footer>
+
+    <script src="SCRIPT/index.js"></script>
+</body>
+</html>
